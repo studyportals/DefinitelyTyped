@@ -4,7 +4,7 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.1
 
-import { Stream } from "stream";
+import { Stream } from 'stream';
 
 interface Test {
     /**
@@ -28,7 +28,7 @@ interface Test {
      *
      * @link https://github.com/glitchdigital/structured-data-testing-tool#expect
      */
-    expect: boolean|string|RegExp;
+    expect: boolean | string | RegExp;
 
     /**
      * Default: false
@@ -50,7 +50,7 @@ interface Test {
      * @link https://github.com/glitchdigital/structured-data-testing-tool#conditional
      */
     conditional: {
-        [key: string]: string
+        [key: string]: string;
     };
 
     /**
@@ -86,14 +86,14 @@ interface Preset {
     tests: Test[];
     presets: string[][];
     conditional: {
-        [key: string]: string
+        [key: string]: string;
     };
 }
 
 interface TestError {
     type: string;
     message: string;
-    expected: string|boolean|RegExp;
+    expected: string | boolean | RegExp;
     found: string;
 }
 
@@ -122,7 +122,10 @@ interface StructuredData {
 }
 
 export function _structuredDataTest(structuredData: StructuredData, options: StructuredDataOptions): Promise<Response>;
-export function structuredDataTest(input: string|Buffer|Stream|StructuredData, options: StructuredDataOptions): Promise<Response>;
+export function structuredDataTest(
+    input: string | Buffer | Stream | StructuredData,
+    options: StructuredDataOptions,
+): Promise<Response>;
 export function structuredDataTestUrl(url: string, options: StructuredDataOptions): Promise<Response>;
 export function structuredDataTestHtml(html: string, options: StructuredDataOptions): Promise<Response>;
 
